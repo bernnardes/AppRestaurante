@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ApplicationAlura", "ApplicationAlura.pyproj", "{C7777E9C-532F-45DE-A725-D8C54A1BCF93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7777E9C-532F-45DE-A725-D8C54A1BCF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7777E9C-532F-45DE-A725-D8C54A1BCF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF921AFD-F502-4143-92CF-4804CC2AF4CB}
+	EndGlobalSection
+EndGlobal
