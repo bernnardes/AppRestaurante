@@ -22,15 +22,16 @@ def exibir_nome_app():
 # Função Limpar tela
 def limpar_tela():
     os.system('cls')
+    print()
 
 # Função voltar menu
 def voltar_menu():
-    input('\nPressione Enter para voltar ao menu')
+    input('\nPressione Enter para voltar ao menu ')
     main()
 
 # Função valida opção escolhida
 def valida_opcao():
-    print('Opção digitada inválida!\n')
+    print('\nOpção digitada inválida!\n')
     voltar_menu()
 
 # Função exibir subtitulo
@@ -39,21 +40,12 @@ def exibir_subtitulo(texto):
     print(texto)
     print()
 
-# Função para exibir data e hora atual
+# Função exibir data e hora atual
 def data_atual():
     data_hora_atual = datetime.now()
     data_hora_formatada = data_hora_atual.strftime("%d/%m/%Y %H:%M:%S")
     return data_hora_formatada
 data_atualizada = data_atual()
-
-# Função finalizar app
-def finaliza_app ():
-    time.sleep(0.5)
-    print('Finalizando o app...')
-    time.sleep(0.6)
-    print(f'App finalizado em {data_atualizada}!\n')
-    time.sleep(0.6)
-    limpar_tela()
 
 # Função listar as opções
 def exibir_opcoes():
@@ -65,6 +57,7 @@ def exibir_opcoes():
 # Função adicionar restaurante
 def adicionar_restaurante():
     exibir_subtitulo('Adicionar novos restaurantes')
+
     nome_restaurante = input('Digite o nome do restaurante: ')
     categoria = input(f'Digite a categoria do restaurante {nome_restaurante}: ')
     dados_restaurante = {'nome':nome_restaurante, 'categoria':categoria, 'ativo':False}
@@ -74,6 +67,7 @@ def adicionar_restaurante():
 
 # Função listar restaurantes
 def listar_restaurantes():
+    limpar_tela()
     exibir_subtitulo('Lista de restaurantes')
     
     print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
@@ -82,10 +76,9 @@ def listar_restaurantes():
         categoria = restaurante['categoria']
         ativo = 'ativado' if restaurante['ativo'] else 'desativado'
         print(f'- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
-    
     voltar_menu()
 
-# Função para ativar o cadastro do restaurante
+# Função ativar o cadastro do restaurante
 def alterar_status():
     exibir_subtitulo('Alterando status do restaurante')
     nome_restaurante = input('Digite o restaurante que deseja alterar o status: ')
@@ -100,14 +93,21 @@ def alterar_status():
 
     if not restaurante_encontrado:
         print('O restaurante não foi encontrado')
-    
     voltar_menu()
+
+# Função finalizar app
+def finaliza_app ():
+    time.sleep(0.5)
+    print('Finalizando o app...')
+    time.sleep(0.6)
+    print(f'App finalizado em {data_atualizada}!\n')
+    time.sleep(0.6)
+    limpar_tela()
 
 # Função para escolher uma opção
 def escolher_opcao():
     try:
         opcao_escolhida = int(input('Digite uma opção: '))
-        # print(f'\nVocê digitou {opcao_escolhida}!\n')
         if opcao_escolhida == 1:
             adicionar_restaurante()
         elif opcao_escolhida == 2:
@@ -120,7 +120,7 @@ def escolher_opcao():
             valida_opcao()
     except:
         valida_opcao()
-
+        
 # >> Função principal do programa para agrupar as funções que o programa irá executar
 def main():
     limpar_tela()
