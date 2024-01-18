@@ -61,7 +61,7 @@ def adicionar_restaurante():
     nome_restaurante = input('Digite o nome do restaurante: ')
     categoria = input(f'Digite a categoria do restaurante {nome_restaurante}: ')
     dados_restaurante = {'nome':nome_restaurante, 'categoria':categoria, 'ativo':False}
-    restaurantes.append(nome_restaurante)
+    restaurantes.append(dados_restaurante)
     print(f'\nO restaurante {nome_restaurante} foi cadastrado!\n')
     voltar_menu()
 
