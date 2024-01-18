@@ -1,8 +1,8 @@
 import os                       #>> Biblioteca para interagir com o Sistema Operacional
 import time                     #>> Biblioteca para adicionar temporizador
 from datetime import datetime   #>> Biblioteca para tratar data e hora
+import keyboard                 #>> Biblioteca para esperar acionamento de qualquer tecla
 
-# restaurantes = ['Bom sabor', 'Apetito', '100 Maneiras', 'Calçadão', 'Na Brasa']
 restaurantes = [{'nome':'Bom sabor','categoria':'Brasileira','ativo':False},
                 {'nome':'Apetito','categoria':'Francesa','ativo':False},
                 {'nome':'100 Maneiras','categoria':'Italiana','ativo':True},
@@ -37,7 +37,10 @@ def valida_opcao():
 # Função exibir subtitulo
 def exibir_subtitulo(texto):
     limpar_tela()
+    linha = '#' * (len(texto))
+    print(linha)
     print(texto)
+    print(linha)
     print()
 
 # Função exibir data e hora atual
@@ -67,10 +70,11 @@ def adicionar_restaurante():
 
 # Função listar restaurantes
 def listar_restaurantes():
-    limpar_tela()
+    #limpar_tela()
     exibir_subtitulo('Lista de restaurantes')
     
     print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
+    
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
         categoria = restaurante['categoria']
